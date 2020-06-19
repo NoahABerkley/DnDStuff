@@ -7,4 +7,4 @@ random.seed(datetime.datetime.now())
 
 def roll(count, die):
     """ roll the dice """
-    return sum([random.randint(1, die) for _ in range(count)])
+    return random.randint(count, die)

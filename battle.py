@@ -26,7 +26,7 @@ p2.maxhp = calculate_max_hitpoints(p2Level,p2HitDie,p2ConMod)
 p2.hp = p2.maxhp
 p2.ac = 15
 p2.initBonus = 0
-p2.critRange = 19
+p2.critRange = 20
 
 p1.attacks = [[7,2,6,5],[7,2,6,5]] # e.g. +7,1d12+5 = [7,1,12,5]
 p2.attacks = [[7,2,6,5],[7,2,6,5]] # e.g. +5, 2d6+3 = [5,2,6,3]
@@ -135,3 +135,4 @@ else:
 
     print()
     print("Win % difference: "+str("%.2f" % (winPerc1n-winPerc2n)))
+    input()
