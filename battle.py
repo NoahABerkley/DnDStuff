@@ -1,5 +1,5 @@
-from player import Player, calcHP
-from arena import attackRolls
+from player import Player, calculate_max_hitpoints
+from arena import attack_rolls
 from dice import roll
 
 ##################################################################
@@ -12,7 +12,7 @@ p1.name = "Player"
 p1Level = 10
 p1HitDie = 10
 p1ConMod = 3
-p1.maxhp = calcHP(p1Level,p1HitDie,p1ConMod)
+p1.maxhp = calculate_max_hitpoints(p1Level,p1HitDie,p1ConMod)
 p1.hp = p1.maxhp
 p1.ac = 15
 p1.initBonus = 10
@@ -22,7 +22,7 @@ p2.name = "Baddie"
 p2Level = 10
 p2HitDie = 10
 p2ConMod = 3
-p2.maxhp = calcHP(p2Level,p2HitDie,p2ConMod)
+p2.maxhp = calculate_max_hitpoints(p2Level,p2HitDie,p2ConMod)
 p2.hp = p2.maxhp
 p2.ac = 15
 p2.initBonus = 0
@@ -87,10 +87,10 @@ for x in range(battles): #rematches
             break
         if detailedTracking:print("\nRound "+str(i)) #spacing for each round
         if firstPlayer == "p1":
-            if attackRolls(p1, p2, detailedTracking) == "death" or attackRolls(p2, p1, detailedTracking) == "death":
+            if attack_rolls(p1, p2, detailedTracking) == "death" or attack_rolls(p2, p1, detailedTracking) == "death":
                 break;
         else:
-            if attackRolls(p2, p1, detailedTracking) == "death" or attackRolls(p1, p2, detailedTracking) == "death":
+            if attack_rolls(p2, p1, detailedTracking) == "death" or attack_rolls(p1, p2, detailedTracking) == "death":
                 break;
 
     if p1.hp <= 0:
